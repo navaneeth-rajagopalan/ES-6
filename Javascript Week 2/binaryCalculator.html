@@ -1,0 +1,117 @@
+<!-- Enter your HTML code here -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Binary Calculator</title>
+    <style type="text/css">
+        .resClass {
+            width: 81%;
+            height: 48px;
+            font-size: 20px;
+            background-color: lightgray;
+        }
+        
+        button {
+            width: 22%;
+            height: 36px;
+            font-size: 18px;
+        }
+        
+        .btnsClass {
+            width: 90%;
+        }
+        
+        .btnVal {
+            background-color: lightgreen;
+            color: brown;
+        }
+        
+        .btnRes {
+            background-color: darkgreen;
+            color: white;
+        }
+        
+        .btnOp {
+            background-color: black;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="res" class="resClass"></div>
+    <div id="btns" class="btnsClass">
+        <button id="btn0" class="btnVal">0</button>
+        <button id="btn1" class="btnVal">1</button>
+        <button id="btnClr" class="btnRes">C</button>
+        <button id="btnEql" class="btnRes">=</button>
+        <button id="btnSum" class="btnOp">+</button>
+        <button id="btnSub" class="btnOp">-</button>
+        <button id="btnMul" class="btnOp">*</button>
+        <button id="btnDiv" class="btnOp">/</button>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("btn0").onclick = function(){
+    var res = document.getElementById("res");
+    res.innerHTML += '0';
+}
+document.getElementById("btn1").onclick = function(){
+    var res = document.getElementById("res");
+    res.innerHTML += '1';
+}
+document.getElementById("btnClr").onclick = function(){
+    var res = document.getElementById("res");
+    res.innerHTML = '';
+}
+document.getElementById("btnEql").onclick = function(){
+    var res = document.getElementById("res"),
+    exp = res.innerHTML, result, e1,e2;
+    try{
+        if(exp.includes("+")){
+            e1 = parseInt(exp.split("+")[0],2);
+            e2 = parseInt(exp.split("+")[1],2);
+            result = e1+e2;
+        }
+        if(exp.includes("-")){
+            e1 = parseInt(exp.split("-")[0],2);
+            e2 = parseInt(exp.split("-")[1],2);
+            result = e1 - e2;
+        }
+        if(exp.includes("*")){
+            e1 = parseInt(exp.split("*")[0],2);
+            e2 = parseInt(exp.split("*")[1],2);            
+            result = e1 * e2;
+        }
+        if(exp.includes("/")){
+            e1 = parseInt(exp.split("/")[0],2);
+            e2 = parseInt(exp.split("/")[1],2);
+            result = e1 / e2;
+        }
+        res.innerHTML = result.toString(2);
+    }
+    catch(ex){
+        
+    }
+}
+document.getElementById("btnSum").onclick = function(){
+    var res = document.getElementById("res");
+    res.innerHTML += '+';
+}
+document.getElementById("btnSub").onclick = function(){
+    var res = document.getElementById("res");
+    res.innerHTML += '-';
+}
+document.getElementById("btnMul").onclick = function(){
+    var res = document.getElementById("res");
+    res.innerHTML += '*';
+}
+document.getElementById("btnDiv").onclick = function(){
+    var res = document.getElementById("res");
+    res.innerHTML += '/';
+}
+    </script>
+</body>
+
+</html>

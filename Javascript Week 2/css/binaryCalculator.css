@@ -1,0 +1,26 @@
+.resClass{
+    width: 81%;
+    height: 48px;
+    font-size: 20px;
+    background-color: lightgray;
+}
+button{
+    width: 22%;
+    height: 36px;
+    font-size: 18px;
+}
+.btnsClass{
+    width: 90%;
+}
+.btnVal{
+    background-color: lightgreen;
+    color: brown;
+}
+.btnRes{
+    background-color: darkgreen;
+    color: white;
+}
+.btnOp{
+    background-color: black;
+    color: red;
+}
